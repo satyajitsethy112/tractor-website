@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramesh Chandra Sethy Tractors</title>
+    
+    <!-- Modern Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-blue: #0f172a; /* Rich Navy */
+            --gold: #d97706; /* Amber/Gold */
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-gray: #475569;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Sticky Navbar */
+        nav {
+            background-color: var(--dark-blue);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .logo span { color: var(--gold); }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url('assets/tractor.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 25px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 22px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero-btn {
+            padding: 16px 45px;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .hero-btn:hover {
+            background-color: #b45309;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        /* General Vertical Section Styles */
+        section {
+            padding: 120px 50px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 45px;
+            color: var(--dark-blue);
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--gold);
+        }
+
+        /* 1. About Section WITH IMAGE */
+        .about-section {
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            max-width: 1100px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            height: 400px;
+            width: 100%;
+            background: url('assets/father.jpg.png') center/cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* 2. Services Section */
+        .services-section {
+            background-color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 50px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.4s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .service-icon {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* 3. Fleet/Tractors Section */
+        .fleet-section {
+            background-color: var(--dark-blue);
+            color: var(--white);
+        }
+        
+        .fleet-section .section-title {
+            color: var(--white);
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fleet-card {
+            background-color: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.4s ease;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255,255,255,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .fleet-img {
+            height: 200px;
+            background: url('assets/tractor.jpg') center/cover;
+        }
+
+        .fleet-info {
+            padding: 25px;
+        }
+
+        .fleet-info h3 {
+            font-size: 20px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .fleet-info p {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* 4. Contact Section */
+        .contact-section {
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.06);
+        }
+
+        .contact-wrapper h3 {
+            font-size: 30px;
+            color: var(--dark-blue);
+            margin-bottom: 35px;
+        }
+
+        .contact-details p {
+            font-size: 19px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-details strong {
+            color: var(--dark-blue);
+        }
+
+        .contact-details .phone {
+            font-size: 32px;
+            color: var(--gold);
+            font-weight: 800;
+            margin-top: 25px;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020617;
+            color: #64748b;
+            text-align: center;
+            padding: 35px;
+            font-size: 15px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1000px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-image {
+                width: 100%;
+            }
+            .services-grid, .fleet-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            nav { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 45px; }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid, .fleet-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav>
+        <a href="#home" class="logo">SETHY <span>TRACTORS</span></a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#fleet">Our Tractors</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Ramesh Chandra Sethy Tractors</h1>
+        <p>Serving the Keonjhar community with dedication. Your most trusted partner for agricultural farming, power tilling, and heavy-duty construction transport.</p>
+        <a href="#contact" class="hero-btn">Get in Touch</a>
+    </section>
+
+    <!-- 1. Vertical About Section WITH FATHER'S IMAGE -->
+    <section class="about-section" id="about">
+        <h2 class="section-title">About <span>Us</span></h2>
+        
+        <div class="about-content">
+            <!-- This div will hold your father's image -->
+            <div class="about-image"></div>
+            
+            <div class="about-text">
+                <p><strong>Based in Ghuturu, Keonjhar, Odisha</strong>, Ramesh Chandra Sethy Tractors has established itself as a highly respected and trusted name in the local farming and construction community.</p>
+                <p>Our core mission is to provide timely, highly reliable, and efficient tractor services to the farmers and builders of Keonjhar. We firmly believe in hard work, honesty, and building long-lasting relationships with our clients.</p>
+                <p>Whether you require a field to be ploughed for the upcoming harvest season, or heavy materials delivered directly to your construction site, our dedicated team and fleet are always ready to deliver exceptional results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Services Section -->
+    <section class="services-section" id="services">
+        <h2 class="section-title">Our <span>Services</span></h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3>Construction Transport</h3>
+                <p>Reliable and prompt direct-to-site delivery of sand, bricks, and soil for all your residential and commercial construction requirements.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌾</div>
+                <h3>Agricultural Farming</h3>
+                <p>Heavy-duty tractor services perfectly suited for ploughing, tilling, harvesting, and managing all your essential agricultural needs.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Power Tiller Services</h3>
+                <p>Specialized Power Tiller machinery available for smaller fields, deep tilling, and intricate farming assistance where large tractors cannot reach.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Fleet Section -->
+    <section class="fleet-section" id="fleet">
+        <h2 class="section-title">Our <span>Fleet</span></h2>
+        
+        <div class="fleet-grid">
+            <div class="fleet-card">
+                <div class="fleet-img"></div>
+                <div class="fleet-info">
+                    <h3>Heavy Transport Tractor</h3>
+                    <p>Optimized for hauling heavy loads. Primarily used for the safe, secure, and swift transport of sand and bricks across Keonjhar.</p>
+                </div>
+            </div>
+
+            <div class="fleet-card">
+                <div class="fleet-img"></div>
+                <div class="fleet-info">
+                    <h3>Farming Special Tractor</h3>
+                    <p>Built exclusively for the fields. Highly efficient for ploughing large areas quickly while maintaining excellent performance.</p>
+                </div>
+            </div>
+
+            <div class="fleet-card">
+                <div class="fleet-img"></div>
+                <div class="fleet-info">
+                    <h3>Multi-Purpose Tractor</h3>
+                    <p>Our heavy-duty backup and multi-use tractor. Ready to tackle both severe agricultural demands and heavy transport duties anytime.</p>
+                </div>
+            </div>
+
+            <!-- New Power Tiller Card -->
+            <div class="fleet-card">
+                <div class="fleet-img" style="background-image: url('assets/power_tiller.jpg');"></div>
+                <div class="fleet-info">
+                    <h3>Power Tiller</h3>
+                    <p>Compact and powerful. Ideal for deep tilling in smaller fields, narrow spaces, and detailed agricultural work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Contact <span>Us</span></h2>
+        
+        <div class="contact-wrapper">
+            <h3>Reach out for Bookings</h3>
+            <div class="contact-details">
+                <p><strong>Location:</strong> Ghuturu, Keonjhar, Odisha, India - 758001</p>
+                <p><strong>Availability:</strong> We are available 24/7 for your farming and transport requirements.</p>
+                <span class="phone">+91 7852926407</span>
+                <p style="font-size: 15px; margin-top: 15px; color: #94a3b8;">(Please call us directly to book a tractor, sand delivery, or power tiller)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Ramesh Chandra Sethy Tractors. Designed with ❤️ in Keonjhar.</p>
+    </footer>
+
+</body>
+</html>

@@ -346,11 +346,14 @@
             }
             .about-image {
                 width: 100%;
+                min-height: 350px;
             }
             .services-grid, .fleet-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             nav { padding: 15px 20px; flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
+            .nav-links a { font-size: 13px; }
             .hero h1 { font-size: 45px; }
         }
 
@@ -358,6 +361,12 @@
             .services-grid, .fleet-grid {
                 grid-template-columns: 1fr;
             }
+            .hero h1 { font-size: 35px; }
+            section { padding: 80px 20px; }
+            .about-content { padding: 30px 20px; }
+            .about-image { height: 280px; min-height: 280px; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 12px; padding: 5px; }
         }
     </style>
 </head>
